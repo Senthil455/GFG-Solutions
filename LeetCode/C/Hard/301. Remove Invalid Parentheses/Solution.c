@@ -82,6 +82,6 @@ char** removeInvalidParentheses(char* s, int* returnSize) {
     }
 
 
-    *returnSize = k*2?k:1;
+    *returnSize = k?k:1;
     return res;
 }
