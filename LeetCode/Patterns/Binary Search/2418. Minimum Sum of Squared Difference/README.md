@@ -8,7 +8,7 @@
 Array, Binary Search, Greedy, Sorting, Heap (Priority Queue)
 
 ### 🚀 Performance
-- **Runtime:** 2 ms
+- **Runtime:** 7 ms
 - **Memory:** 22.5 MB
 
 ---
