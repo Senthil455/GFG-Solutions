@@ -5,7 +5,7 @@
 ![Difficulty](https://img.shields.io/badge/Difficulty-Easy-brightgreen) ![Language](https://img.shields.io/badge/Language-C-blue)
 
 ### 🚀 Performance
-- **Runtime:** 1 ms
+- **Runtime:** 0 ms
 - **Memory:** 11.7 MB
 
 ---
