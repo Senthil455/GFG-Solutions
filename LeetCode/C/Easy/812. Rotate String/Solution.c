@@ -1,18 +1,25 @@
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+
 bool rotateString(char* s, char* goal) {
-    int sLen = strlen(s);
-    int goalLen = strlen(goal);
-
-    if (sLen != goalLen)
+    int len_s = strlen(s);
+    int len_goal = strlen(goal);
+    
+    if (len_s != len_goal) {
         return false;
-
-    for (int i = 0; i < sLen * 2; i++) {
-        int j = 0;
-        for (; j < goalLen; j++)
-            if (s[(i+j) % sLen] != goal[j])
-                break;
-        if (j == goalLen)
-            return true;
+    }
+    if (len_s == 0) {
+        return true;
     }
 
-    return false;
+    char* temp = malloc(2 * len_s + 1);
+    strcpy(temp, s);
+    strcat(temp, s);
+
+    bool res = (strstr(temp, goal) != NULL);
+
+    free(temp);
+    return res;
 }
+```[cite: 8]
