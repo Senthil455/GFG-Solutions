@@ -1,32 +1,20 @@
-bool detectCapitalUse(char* word) {
-    bool out = true;
-    int n=strlen(word);
-    if(word[0]>= 'A' && word[0] <'a'){
-        if(word[1]>= 'a'){
-            for(int i=1; i<n; i++){
-                if(word[i] <'a'){
-                    out=false;
-                    break;
-                }
-            }
-        }
-        else{
-            for(int i=1; i<n; i++){
-                if(word[i] >='a'){
-                    out=false;
-                    break;
-                }
-            }
-        }
+#include <stdbool.h>
+#include <ctype.h>
+#include <string.h>
 
-    }
-    else{
-        for(int i=0; i<n; i++){
-            if(word[i] <'a'){
-                out=false;
-                break;
-            }
+bool detectCapitalUse(char* word) {
+    int count = 0;
+    int len = strlen(word);
+    for (int i = 0; i < len; i++) {
+        if (isupper(word[i])) {
+            count++;
         }
     }
-    return out;
+    if (count == len || count == 0) {
+        return true;
+    }
+    if (count == 1 && isupper(word[0])) {
+        return true;
+    }
+    return false;
 }
