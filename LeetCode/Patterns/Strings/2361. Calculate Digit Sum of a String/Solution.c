@@ -1,21 +1,23 @@
-char * digitSum(char * s, int k) {
-    int cur = 0;
-    int sum = 0;
-    for (int i = 0; strlen(s) > k; i++) {
-        if (i != 0 && i % k == 0 || i == strlen(s)) {
-                char buff[16];
-                sprintf(buff, "%d", sum);
-                for (int i = 0; buff[i]; i++, cur++)
-                    s[cur] = buff[i];
-                sum = 0;
+char* digitSum(char* s, int k) {
+    int len = strlen(s);
+
+    while (len > k) {
+        char* next = (char*)calloc(len * 4 + 1, sizeof(char));
+        
+        for (int i = 0; i < len; i += k) {
+            int sum = 0;
+            for (int j = i; j < i + k && j < len; j++) {
+                sum += s[j] - '0';
             }
-        if (i == strlen(s)) {    
-            s[cur] = '\0';
-            cur = 0;
-            i = 0;
+            
+            char buf[12];
+            sprintf(buf, "%d", sum);
+            strcat(next, buf);
         }
-        sum += s[i] - '0';
+
+        s = next;
+        len = strlen(s);
     }
-    
+
     return s;
 }

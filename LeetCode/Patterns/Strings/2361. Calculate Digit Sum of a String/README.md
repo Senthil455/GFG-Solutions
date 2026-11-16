@@ -8,8 +8,8 @@
 String, Simulation
 
 ### 🚀 Performance
-- **Runtime:** 0 ms
-- **Memory:** 8.5 MB
+- **Runtime:** N/A
+- **Memory:** N/A
 
 ---
 
