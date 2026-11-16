@@ -39,8 +39,14 @@ char* maskPII(char* s) {
             res[idx++] = '-';
         }
 
-        strcpy(res + idx, "***-***-");
-        idx += 9;
+        res[idx++] = '*';
+        res[idx++] = '*';
+        res[idx++] = '*';
+        res[idx++] = '-';
+        res[idx++] = '*';
+        res[idx++] = '*';
+        res[idx++] = '*';
+        res[idx++] = '-';
 
         for (int i = d_len - 4; i < d_len; i++) {
             res[idx++] = digits[i];
