@@ -22,4 +22,3 @@ bool rotateString(char* s, char* goal) {
     free(temp);
     return res;
 }
-```[cite: 8]
